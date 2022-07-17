@@ -1,7 +1,9 @@
-
 server:
   port: 9999
 spring:
   profiles:
     active: local,production
+  application:
+    name: config-discovery
+
 

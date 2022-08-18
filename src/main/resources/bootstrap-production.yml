@@ -5,11 +5,11 @@ spring:
       server:
         native:
           search-locations: file:///
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: http://newkayak.iptime.org:9999/eureka/
-  dashboard:
-    path: /dashboard
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: http://newkayak.iptime.org:9999/eureka/
+#  dashboard:
+#    path: /dashboard

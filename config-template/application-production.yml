@@ -7,6 +7,12 @@ server:
     include-exception: false
     include-message: never
     include-stacktrace: never
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
 ##Spring
 spring:
   profiles: production

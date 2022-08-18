@@ -1,4 +1,5 @@
-server: ## PORT
+#server
+server:
   port: 8080
   error:
     whitelabel:
@@ -6,7 +7,13 @@ server: ## PORT
     include-exception: false
     include-message: never
     include-stacktrace: never
-
+##actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+#spring
 spring:
   profiles: local
   datasource:
@@ -21,6 +28,7 @@ spring:
       minimum-idle: 2
       idle-timeout: 600000
       max-lifetime: 1800000
+#JPA
   jpa:
     hibernate:
       ddl-auto: none
@@ -50,6 +58,9 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
+
+
+#CONSTANT CODES
 CONSTANTS:
   PROJECT_NAME: "SPRING_BASE"
     EXCLUDE_API_PATHS: "user," ## delimiter ','  no space around ','

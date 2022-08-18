@@ -1,0 +1,15 @@
+version: '3'
+
+  services:
+    server:
+      container_name: 'spring-config-server'
+      build:
+        context: .
+        image: amazoncoreetto:11
+        volumes:
+          - /home/app/projects:/home/projects/
+        ports:
+          - 1234:1234
+        command: ['java', '-jar', '-Dspring.active.profiles=production', '/home/projects/base/application.war']
+
+

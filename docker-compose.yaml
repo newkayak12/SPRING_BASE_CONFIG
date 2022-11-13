@@ -10,6 +10,6 @@ version: '3'
           - /home/app/projects:/home/projects/
         ports:
           - 1234:1234
-        command: ['java', '-jar', '-Dspring.active.profiles=production', '/home/projects/base/application.war']
+        command: ['java', '-jar', '-Dspring.profiles.active=production', '/home/projects/base/application.war']
 
 

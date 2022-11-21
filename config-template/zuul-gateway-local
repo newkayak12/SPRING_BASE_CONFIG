@@ -35,3 +35,6 @@ zuul:
         path: /user/**
         url: [serviceName]
         prefix: user
+        filters:
+         - RewritePath=/user/?(?<segment>.*), /$\{segment}
+         - UserFilter

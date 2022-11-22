@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: configuration-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: /Users/sanghyeonkim/Downloads/port/SPRING_BASE_CONFIG/src/config-template
+        bootstrap: true
+server:
+  port: 8888

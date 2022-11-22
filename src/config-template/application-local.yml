@@ -7,20 +7,20 @@ server:
     include-exception: false
     include-message: never
     include-stacktrace: never
-##actuator
-management:
-  endpoints:
-    web:
-      exposure:
-        include: info, health
+###actuator
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: info, health
 #spring
 spring:
   profiles: local
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url:
-    username:
-    password:
+    url: jdbc:mariadb://127.0.0.1:3306/test
+    username: root
+    password: root
     hikari:
       maximum-pool-size: 5
       connection-timeout: 5000

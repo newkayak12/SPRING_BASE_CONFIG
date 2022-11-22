@@ -2,7 +2,7 @@ spring:
   application:
     name: configuration-server
   profiles:
-    active: composite
+    active: local
   cloud:
     config:
       server:
@@ -10,3 +10,6 @@ spring:
           - type: native
             search-locations: file:C:\study\config\src\config-template
         bootstrap: true
+  config:
+    activate:
+      on-profile: local

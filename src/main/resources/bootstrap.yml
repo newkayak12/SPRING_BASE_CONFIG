@@ -1,9 +1,12 @@
-server:
-  port: 9999
 spring:
-  profiles:
-    active: local,production
   application:
-    name: config-discovery
-
-
+    name: configuration-server
+  profiles:
+    active: composite
+  cloud:
+    config:
+      server:
+        composite:
+          - type: native
+            search-locations: file:C:\study\config\src\config-template
+        bootstrap: true

@@ -1,0 +1,38 @@
+server:
+  port: 8889
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, refresh
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    healthcheck: true
+    serverUrl:
+      defaultZone: http://localhost:6206/eureka
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
+#            - After -> ?? ?? ??
+#            - Before -> ?? ?? ??
+#            - Between -> ?? ?? ??
+#            - Cooke -> name, regExp
+#            - Method=GET -> method
+          filters:
+            - AddRequestHeader=token, 123456 #name: value
+            - AddResponseHeader=authenticated, yes
+            - RewritePath=/user/?(?<segment>.*), /$\{segment}
+#   rewritePath -> prefix????? ????? ??? ?
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order/**
